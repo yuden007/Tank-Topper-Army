@@ -1,0 +1,324 @@
+<!-- I declare that the lab work here submitted is original
+except for source material explicitly acknowledged,
+and that the same or closely related material has not been
+previously submitted for another course.
+I also acknowledge that I am aware of University policy and
+regulations on honesty in academic work, and of the disciplinary
+guidelines and procedures applicable to breaches of such
+policy and regulations, as contained in the website.
+University Guideline on Academic Honesty:
+https://www.cuhk.edu.hk/policy/academichonesty/
+Student Name : Lin Yu Hsiang
+Student ID : 1155172258
+Class/Section : CSCI2720
+Date : 2024-10-23 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="images/icon.ico" type="image/x-icon">
+    <title>Tank Topper Army</title>
+</head>
+
+<body id="body" style="text-align: start">
+    <header>
+        <div class="header-footer">
+            <a href="https://onepunchman.fandom.com/wiki/Heroes/Hero_Association" target="_blank">
+                <img src="images/logo.ico" alt="Hero Association Logo">
+            </a>
+            <h1 class="title">Tank Topper Army</h1>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <div></div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#members">Members</a></li>
+                    <li><a href="#merchandise">Merchandise</a></li>
+                    <li><a href="#join">Join us</a></li>
+                </ul>
+                <button class="hiddenButton"id="showButton" onclick="handleShowButtons()">Show</button>
+            </div>
+
+            <div class="button-container" id="hiddenButtons" style="display: none;">
+                <button class="hiddenButton" onclick="handleTextAlign()">Align</button>
+                <button class="hiddenButton" onclick="handleSpotlight()" id="commentButton">Comment</button>
+                <button class="hiddenButton" id="timeButton" onclick="showToast()">Time</button>
+            </div>
+        </nav>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" style="background-color: rgba(0, 0, 0, 0.01)">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="time" style="border: white 2px solid">
+                <div class="toast-header" style="background-color: #00022a; color: rgb(255, 255, 255)">
+                    <strong class="me-auto">Time</strong>
+                    <button type="button" class="btn-close" aria-label="Close" onclick="closeToast()" style="filter: invert(1);"></button>
+                </div>
+                <div class="toast-body"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <section id="about">
+                <h2>About us</h2>
+                <section>
+                    <p>
+                        Tank Topper Army, a formidable group of individuals who are led by the S-class hero <strong style="color: rgb(50, 98, 231);"><a href="https://onepunchman.fandom.com/wiki/Tanktop_Master" target="_blank" style="color: inherit; text-decoration: none;">TankTop Master</a></strong>, demonstrate exceptional strength and unwavering determination in their quest for justice and heroism. 
+                        With the power given by tank top, we embody the values of camaraderie, resilience, and passion for protecting the innocent and upholding righteousness. 
+                        United under the banner of the tank top, as a symbol of unity and strength, we are ready to confront any challenge that threatens the peace and well-being of society.
+                    </p>
+                    <h4>Our Mission</h4>
+                    <ul>
+                        <li>Protect the innocent and uphold justice.</li>
+                        <li>Promote tank top🎽for well-being of humanity.</li>
+                        <li>Defeat MECHANICAL POWER.💪</li>
+                        <li>Defeat SUPER NATURAL POWER.💪</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="members">
+                <img src="images/Tanktop_Master.jpg" alt="TankTop Master">
+                <h2>Leader</h2>
+                <div class="leader">
+                    <h2 class="leader-name">S-Class Hero: TankTop Master</h2>
+                    <div class="leader-saying">
+                        <p>"Tanktop is the source of strength."</p>
+                        <p>"I didn't wear this tanktop just for fighting."</p>
+                        <p>"Wearing a tanktop means much more than that flimsy badge of a rank."</p>
+                        <p>"Careful, you're not even wearing a tanktop."</p>
+                    </div>
+                </div>
+                <h3>Members</h3>
+                <div class="container">
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Al_Dente.jpg" class="member-image" alt="Tanktop Al Dente"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Al Dente</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Black_Hole.jpg" class="member-image" alt="Tanktop Black Hole"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Black Hole</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Doctor.jpg" class="member-image" alt="Tanktop Doctor"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Doctor</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Girl.jpg" class="member-image" alt="Tanktop Girl"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Girl</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Hatter.jpg" class="member-image" alt="Tanktop Hatter"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Hatter</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Jungle.jpg" class="member-image" alt="Tanktop Jungle"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Jungle</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Mask.jpg" class="member-image" alt="Tanktop Mask"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Mask</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Racer.jpg" class="member-image" alt="Tanktop Racer"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Racer</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Rockabilly.jpg" class="member-image" alt="Tanktop Rockabilly"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Rockabilly</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Swimmer.jpg" class="member-image" alt="Tanktop Swimmer"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Swimmer</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Tiger.jpg" class="member-image" alt="Tanktop Tiger"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Tiger</div></div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/Tanktop_Vegetarian.jpg" class="member-image" alt="Tanktop Vegetarian"></div>
+                            <div class="col-md-7"><div class="member-name">Tanktop Vegetarian</div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="merchandise">
+                <h2>Merchandise</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/merchandise1.jpg">
+                            <h3>Hero Tanktop</h3>
+                            <p>Get your free Hero Tanktop and join the ranks of the Tank Topper Army at Hero Association headquater!</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="images/merchandise2.jpg">
+                            <h3>Advanced Collection <em style="color: red;">Coming Soon!!!</em></h3>
+                            <p>Discover our latest Tanktop collection, each designed with unique buff to enhance your power.</p>
+                        </div>
+                    </div>
+            </section>
+            <section id="join">
+                <h2>Join us</h2>
+
+
+
+                <!-- <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="introduction" class="form-label">Brief Introduction</label>
+                        <textarea class="form-control" id="introduction" rows="3"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="red" name="color_choice" value="red" />
+                        <label class="form-check-label" for="red">Red</label><br />
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="green" name="color_choice" value="green" />
+                        <label class="form-check-label" for="green">Green</label><br />
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="yellow" name="color_choice" value="yellow" />
+                        <label class="form-check-label" for="yellow">Yellow</label><br />
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="blue" name="color_choice" value="blue" />
+                        <label class="form-check-label" for="blue">Blue</label><br />
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="processform()">Submit</button>
+                </form> -->
+
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" autocomplete="email" oninput="handleCheckEmail()" required>
+                        <p class="warning" id="email-warning" style="color: red; margin: 0 0 0 4px">Invalid email format.</p>
+                    </div>
+                    <span for="tanktopColor" class="form-label">Color of Tanktop</span><br />
+                    <input type="radio" id="red" name="color_choice" value="red" required/>
+                    <label for="red" class="color_choice">Red</label><br />
+                    <input type="radio" id="green" name="color_choice" value="green" required/>
+                    <label for="green" class="color_choice">Green</label><br />
+                    <input type="radio" id="yellow" name="color_choice" value="yellow" required/>
+                    <label for="yellow" class="color_choice">Yellow</label> <br />
+                    <input type="radio" id="blue" name="color_choice" value="blue" required/>
+                    <label for="blue" class="color_choice">Blue</label> <br /> <br />
+                    <div class="mb-3">
+                        <label for="introduction" class="form-label">Brief Introduction</label>
+                        <textarea class="form-control" id="introduction" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="validateForm()">Submit</button>
+                </form>
+                
+                <div id="comments"> 
+                    <div id="c1001" class="d-flex" style="font-size: small; background-color: green; margin: 10px; padding: 10px; border-radius: 5px;"> <!-- flex layout -->
+                        <div class="flex-shrink-0"> <!-- disallow div to shrink when page gets smaller -->
+                            <img src="images/tanktop.png" height="50" width="50">
+                        </div>
+                        <div class="flex-grow-1"> <!-- allow div to grow and take up all space -->
+                            <h6>colintsang@cuhk.edu.hk</h6>
+                            <p>In my veins flows the molten fire of justice and tank top which I can't control. I belive that Tank Top Army is where I can get guidance and mentorship to control such power for better use. Thank you for your consideration.</p>
+                        </div>
+                    </div> 
+                    <div id="c1002" class="d-flex" style="font-size: small; background-color: darkred; margin: 10px; padding: 10px; border-radius: 5px;"> <!-- flex layout -->
+                        <div class="flex-shrink-0"> <!-- disallow div to shrink when page gets smaller -->
+                            <img src="images/tanktop.png" height="50" width="50">
+                        </div>
+                        <div class="flex-grow-1"> <!-- allow div to grow and take up all space -->
+                            <h6>yuden@gmail.com</h6>
+                            <p>I wear tank top everyday with all sorts of color. I believe that I am suitable to join Tank Top Army. I wish to join and wear tank top every second in my life to contribute this society.🙂</p>
+                        </div>
+                    </div>
+                    <div id="c1003" class="d-flex" style="font-size: small; background-color: darkblue; margin: 10px; padding: 10px; border-radius: 5px;"> <!-- flex layout -->
+                        <div class="flex-shrink-0"> <!-- disallow div to shrink when page gets smaller -->
+                            <img src="images/tanktop.png" height="50" width="50">
+                        </div>
+                        <div class="flex-grow-1"> <!-- allow div to grow and take up all space -->
+                            <h6>jack@hotmail.com</h6>
+                            <p>My first encounter with the Tank Top Army was when I was saved by Tanktop vegetarian from peanut butter allergic. From that moment, I knew that Tank Top Army is where I belong.😭</p>
+                        </div>
+                    </div>
+                    <div id="c1004" class="d-flex" style="font-size: small; background-color: darkgoldenrod; margin: 10px; padding: 10px; border-radius: 5px;"> <!-- flex layout -->
+                        <div class="flex-shrink-0"> <!-- disallow div to shrink when page gets smaller -->
+                            <img src="images/tanktop.png" height="50" width="50">
+                        </div>
+                        <div class="flex-grow-1"> <!-- allow div to grow and take up all space -->
+                            <h6>john@yahoo.com</h6>
+                            <p>Dear Tank Top Army, I'm a C-Class hero Json Wick who found that I'm afraid of heat espiecially during the summer.🥵 I realise that only wearing a tank top during hero activities can fully utilize my strength.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+        <div class="col-md-2">
+            <aside>
+                <table class="commentBox" id="commentBox">
+                    <tr>
+                        <th>Tell us how you feel</th>
+                    </tr>
+                    <tr>
+                        <td class="comment">Love your tricep</td>
+                    </tr>
+                    <tr>
+                        <td class="comment">Nice tanktop</td>
+                    </tr>
+                    <tr>
+                        <td class="comment">Love you always!!!</td>
+                    </tr>
+                    <tr>
+                        <td class="comment">Man living my dream</td>
+                    </tr>
+                </table>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="header-footer">
+        <img src="images/logo.ico"/>
+        <a class="nav-button" href="#about">About</a>
+        <a class="nav-button" href="#members">Members</a>
+        <a class="nav-button" href="#merchandise">Merchandise</a>
+        <a class="nav-button" href="#join">Join us</a>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
