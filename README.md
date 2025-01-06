@@ -1,7 +1,7 @@
 # Tank Topper Army !!!
 
-A csci2720 assignment about static webpage
+An assignment from csci2720
 
-no fancy technolgies... but my PROUDEST work all time
+no fancy technologies... but my PROUDEST work all time
 
-Located here [here](https://yuden007.github.io/Tank-Topper-Army/).
+Located [here](https://yuden007.github.io/Tank-Topper-Army/).
